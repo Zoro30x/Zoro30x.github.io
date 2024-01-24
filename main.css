@@ -582,7 +582,6 @@ body {
   font-size: 12px;
 }
 
-/* iPad (768px x 1024px) */
 @media (min-width: 413px) and (max-width: 768px) {
   .logo-container h1 {
     font-size: 30px;
@@ -759,14 +758,13 @@ body {
   }
 }
 
-/* Google Pixel (411px x 731px) */
-@media (min-width: 376px) and (max-width: 412px) {
+@media (min-width: 320px) and (max-width: 412px) {
   .nav-items {
     display: none;
     flex-direction: column;
     position: absolute;
     top: 60px; /* Adjust as needed */
-    left: 0;
+    right: 1px;
     background-color: #ece9e3;
     width: 100%;
     z-index: 1;
@@ -788,20 +786,20 @@ body {
   #menu-icon {
     display: block;
     position: relative;
-    right: 14pc;
-    bottom: 4.5pc;
-    font-size: 40px;
+    right: 9.2pc;
+    bottom: 3.4pc;
+    font-size: 35px;
   }
 
   #cart-icon {
     display: block;
     position: relative;
-    left: 15.5pc;
-    bottom: 4pc;
+    left: 9.8pc;
+    bottom: 3.3pc;
   }
 
   #cart-icon img {
-    height: 50px;
+    height: 40px;
   }
 
   .top-line {
@@ -813,16 +811,44 @@ body {
   }
 
   .logo-container h1 {
-    font-size: 40px;
+    font-size: 25px;
     font-weight: bolder;
   }
 
   .Hero .container-one h1 {
-    font-size: 13vw;
+    font-size: 12vw;
+    letter-spacing: 4px;
+    margin-top: 30px;
   }
 
   .Hero .horizontal-line {
-    width: 15pc;
+    width: 20pc;
+  }
+
+  .Hero .image-container {
+    margin-top: 6pc;
+  }
+
+  .Hero .image-container img {
+    max-width: 100%;
+  }
+
+  .Hero .image-vertical-line {
+    height: 3pc;
+  }
+
+  .Hero .vertical-line {
+    height: 4pc;
+    background-color: #bcadad;
+  }
+
+  .Hero .container-two h3 {
+    font-size: 28px;
+  }
+
+  .Hero .container-two p {
+    font-size: 16px;
+    margin-bottom: 40px;
   }
 
   .Project h1 {
@@ -830,7 +856,7 @@ body {
   }
 
   .Shop h1 {
-    font-size: 39px;
+    font-size: 11vw;
   }
 
   .project-container .right-bottom-container {
@@ -851,7 +877,24 @@ body {
   }
 
   .project-container .right-top-container {
-    margin: 0px 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    font-size: 13px;
+  }
+
+  .project-container .square {
+    width: 8px;
+    height: 8px;
+  }
+
+  .project-container .slider {
+    gap: 7px;
+    margin-left: 16px;
+  }
+
+  .project-container .image-title {
+    font-size: 11px;
   }
 
   .about-container .image-container {
@@ -859,51 +902,231 @@ body {
     height: 250px;
   }
 
+  .about-container .color-container p:nth-child(1) {
+    font-size: 20px;
+  }
+
+  .about-container .line {
+    background-color: #93908a;
+  }
+
+  .about-container .color-container h1 {
+    font-size: 14vw;
+    margin-top: 6pc;
+    margin-bottom: 3.4pc;
+  }
+
+  .about-container .text-container #text-two {
+    font-size: 55px;
+    margin-bottom: 30px;
+  }
+
+  .about-container .text-container #text-three {
+    font-size: 13px;
+  }
+
+  .about-container {
+    margin-bottom: 7pc;
+  }
+
   .service-container h1 {
-    font-size: 39px;
+    font-size: 36px;
+  }
+
+  .service-container .text {
+    font-size: 13px;
   }
 
   .service-container .services {
-    grid-template-columns: auto 1fr auto;
-    gap: 0px;
+    grid-template-columns: 60px 230px 1px;
+    gap: 0;
   }
 
   .shop-container {
     grid-template-columns: 1fr;
+    border-radius: 40px 40px 0 0;
   }
 
   .shop-container .text {
     margin-left: 1.6pc;
+    font-size: 12px;
+  }
+
+  .shop-container .text img {
+    height: 23px;
   }
 
   #arrwone,
   #arrwtwo {
-    display: none;
+    width: 17px;
+    height: 26px;
+    top: 15%;
   }
 
   .service-container .services .description {
-    width: 320px;
+    width: 340px;
+    font-size: 13px;
+    margin-top: 0;
+    margin-bottom: 30px;
   }
 
-  .footer-container img {
+  .service-container .text img {
+    height: 23px;
+  }
+
+  .footer-container {
+    height: 600px;
+    padding: 0;
+    padding-inline: 5vw;
+    padding-top: 5vw;
+  }
+
+  .footer-container .lmlogo {
     width: 35vw;
+  }
+
+  .footer-nav {
+    font-size: 11px;
   }
 
   .footer-item {
     display: block;
+    width: 100%;
+  }
+
+  .footer-item.bottom {
+    min-width: inherit;
+  }
+
+  .footer-item.navitems {
+    margin-left: 30px;
   }
 
   .footer-item.newsletter {
     position: relative;
-    top: 10pc;
-    right: 15pc;
+    top: 1pc;
+    right: 10.5pc;
+    width: 100%;
+  }
+
+  .text-field {
+    width: 300px;
+  }
+
+  .content {
+    min-width: 172px;
+  }
+
+  .footer-item.newsletter h4 {
+    font-size: 27px;
+  }
+
+  .contact {
+    position: relative;
+    right: 10.5pc;
+  }
+
+  .logos {
+    position: relative;
+    bottom: 1.5pc;
+    right: 12.8pc;
+  }
+
+  .lgs:nth-child(1) {
+    height: 23px;
+    width: 83px;
+  }
+
+  .lgs:nth-child(2) {
+    height: 45px;
+    width: 83px;
+  }
+
+  .social {
+    position: relative;
+    top: 6pc;
+    right: 11pc;
+  }
+
+  .pp {
+    position: relative;
+    top: 3pc;
+    right: 13.5pc;
+  }
+
+  .sumbit {
+    position: relative;
+    bottom: 26px;
+    left: 17.5pc;
+  }
+
+  .footer-container .text {
+    margin-right: 0;
   }
 }
 
-/* iPhone X (375px x 812px) */
-@media (min-width: 322px) and (max-width: 376px) {
-}
-
-/* iPhone 4 (320px x 480px) */
 @media (max-width: 321px) {
+  .logo-container h1 {
+    font-size: 23px;
+  }
+
+  #menu-icon {
+    right: 7pc;
+  }
+
+  #cart-icon {
+    left: 7.5pc;
+  }
+
+  .Hero .horizontal-line {
+    width: 18pc;
+  }
+
+  .service-container .services .description {
+    width: 290px;
+  }
+
+  .footer-container {
+    padding-inline: 0;
+  }
+
+  .footer-container .lmlogo {
+    padding-left: 10px;
+  }
+
+  .footer-item.newsletter {
+    right: 8.5pc;
+  }
+
+  .text-field {
+    width: 250px;
+  }
+
+  .sumbit {
+    left: 14.5pc;
+  }
+
+  .contact {
+    right: 8.5pc;
+  }
+
+  .logos {
+    right: 10.2pc;
+  }
+
+  .social {
+    right: 9pc;
+  }
+
+  .pp {
+    right: 10pc;
+  }
+
+  .content {
+    min-width: 150px;
+  }
+
+  .footer-item.newsletter h4 {
+    font-size: 22px;
+  }
 }
