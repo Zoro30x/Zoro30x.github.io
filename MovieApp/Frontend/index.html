@@ -3,9 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>Stream Vibe</title>
   </head>
-  <body></body>
-  <link rel="stylesheet" href="index.js" />
+  <body>
+    <!-- Header -->
+    <header>
+      <div id="logo">
+        <img src="./Assets/Logo.png" alt="Stream Vibe Logo" />
+        <h6>Stream Vibe</h6>
+      </div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Movies</a>
+        <a href="#">TV Series</a>
+      </nav>
+      <div id="icons">
+        <i class="fa-regular fa-user" style="color: #ffffff"></i>
+        <i class="fa-regular fa-heart" style="color: #ffffff"></i>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <section class="hero-section">
+        <div class="hero-text">
+          <h1 id="hero-title">Fetching Data...</h1>
+          <p id="hero-description">Fetching Movie Details....</p>
+          <div class="hero-buttons">
+            <button class="btn-first">Watch Now</button>
+            <button class="btn-second">Watch Trailer</button>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img id="hero-image" alt="Hero Movie Poster" />
+        </div>
+
+        <div class="hero-navigation">
+          <button class="prev" id="prev-btn">&#8249;</button>
+          <button class="next" id="next-btn">&#8250;</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer></footer>
+
+    <script src="index.js"></script>
+  </body>
 </html>

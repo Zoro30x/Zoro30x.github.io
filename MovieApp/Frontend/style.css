@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #0f0f0f;
+  color: #fff;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 4;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header #logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+header #logo img {
+  height: 50px;
+}
+header #logo h6 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+}
+header nav {
+  display: flex;
+  gap: 30px;
+}
+header nav a {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+header nav a:hover {
+  color: #ff0000;
+}
+header #icons {
+  display: flex;
+  gap: 30px;
+  font-size: 20px;
+  cursor: pointer;
+}
+header #icons:hover {
+  color: #ff0000;
+}
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  text-align: justify;
+  gap: 7pc;
+}
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+.hero-section .hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 45%;
+  padding-left: 110px;
+}
+.hero-section .hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.hero-section .hero-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+.hero-section .hero-text .hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+.hero-section .hero-text .hero-buttons button {
+  padding: 15px 30px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.hero-section .hero-text .hero-buttons .btn-first {
+  background-color: #ff0000;
+  border: none;
+  border-radius: 20px;
+}
+.hero-section .hero-text .hero-buttons .btn-first:hover {
+  background-color: #e68200;
+  color: #0f0f0f;
+}
+.hero-section .hero-text .hero-buttons .btn-second {
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 20px;
+}
+.hero-section .hero-text .hero-buttons .btn-second:hover {
+  background-color: #fff;
+  color: #ff0000;
+}
+.hero-section .hero-image {
+  position: relative;
+  z-index: 2;
+}
+.hero-section .hero-image img {
+  width: 300px;
+  border-radius: 10px;
+}
+.hero-section .hero-navigation {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.hero-section .hero-navigation .prev {
+  margin-left: 20px;
+}
+.hero-section .hero-navigation .next {
+  margin-right: 20px;
+}
+.hero-section .hero-navigation button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.hero-section .hero-navigation button:hover {
+  transform: scale(2.1);
+}/*# sourceMappingURL=style.css.map */
