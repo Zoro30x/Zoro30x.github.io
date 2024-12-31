@@ -22,17 +22,16 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-header #logo {
+header .logo {
   display: flex;
   align-items: center;
   gap: 5px;
 }
-header #logo img {
+header .logo img {
   height: 50px;
 }
-header #logo h6 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 20px;
+header .logo h6 {
+  font-size: 1.5rem;
 }
 header nav {
   display: flex;
@@ -60,7 +59,7 @@ header #icons:hover {
 
 .hero-section {
   position: relative;
-  height: 100vh;
+  padding: 8rem 0;
   display: flex;
   align-items: center;
   background-size: cover;
@@ -154,4 +153,90 @@ header #icons:hover {
 }
 .hero-section .hero-navigation button:hover {
   transform: scale(2.1);
+}
+
+#content-section {
+  margin: 40px 110px 40px 110px;
+}
+#content-section .content-text {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40px;
+}
+#content-section .content-text h2 {
+  font-size: 1.5rem;
+}
+#content-section .content-text .btn-third {
+  padding: 5px 20px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 20px;
+}
+#content-section .content-text .btn-third:hover {
+  background-color: #fff;
+  color: #ff0000;
+}
+#content-section .content-row {
+  display: flex;
+  gap: 15px;
+  overflow: hidden;
+}
+#content-section .content-row .card {
+  flex: 0 0 auto;
+  overflow: hidden;
+  width: 150px;
+}
+#content-section .content-row .card img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+#content-section .content-row .card .card-title {
+  font-size: 1rem;
+  padding: 10px;
+}
+
+footer {
+  background-image: url("./Assets/footer-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 4.5rem 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+footer .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+footer .logo img {
+  height: 50px;
+}
+footer .logo h6 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+footer .links {
+  display: flex;
+  gap: 200px;
+}
+footer .links ul {
+  list-style: none;
+}
+footer .links ul li {
+  margin-bottom: 20px;
+  cursor: default;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+footer .links ul li:hover {
+  color: #ff0000;
 }/*# sourceMappingURL=style.css.map */
