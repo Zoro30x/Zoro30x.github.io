@@ -10,8 +10,6 @@ $spacing-mobile: 20px;
 $spacing-tablet: 35px;
 $spacing-desktop: 50px;
 
-$box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
 $mobile: 360px;
 $tablet: 720px;
 $desktop: 1024px;
@@ -33,7 +31,7 @@ body {
 }
 
 header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -42,6 +40,11 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: height 0.3s ease, background-color 0.3s ease;
+
+  &.scrolled {
+    background-color: $body-bg;
+  }
 
   .logo {
     display: flex;
@@ -60,15 +63,20 @@ header {
   nav {
     display: flex;
     gap: 30px;
+
     a {
       text-decoration: none;
       color: $txt-color;
-      font-family: $font-family;
       font-size: 20px;
-      transition: color 0.3s;
+      transition: color 0.6s;
+      padding-bottom: 2px;
 
       &:hover {
-        color: $main-color;
+        color: $main-color; // Hover color
+      }
+
+      &.active {
+        border-bottom: 2px solid $main-color;
       }
     }
   }
@@ -78,8 +86,13 @@ header {
     gap: 30px;
     font-size: 20px;
     cursor: pointer;
-    &:hover {
-      color: $main-color;
+
+    i {
+      color: #ffffff;
+      transition: color 0.3s ease;
+      &:hover {
+        color: $main-color;
+      }
     }
   }
 }
@@ -102,7 +115,16 @@ header {
     width: 100%;
     height: 100%;
     @include overlay();
-    z-index: 1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to top, $body-bg, rgba(#000, 0));
   }
 
   .hero-text {
@@ -141,7 +163,7 @@ header {
         border-radius: 20px;
 
         &:hover {
-          background-color: #e68200;
+          background-color: #ffffff;
           color: $body-bg;
         }
       }
@@ -207,6 +229,7 @@ header {
     h2 {
       font-size: 1.5rem;
     }
+
     .btn-third {
       padding: 5px 20px;
       color: $txt-color;
@@ -221,6 +244,14 @@ header {
         background-color: #fff;
         color: $main-color;
       }
+
+      a {
+        text-decoration: none;
+        color: $txt-color;
+        &:hover {
+          color: $main-color;
+        }
+      }
     }
   }
 
@@ -230,6 +261,7 @@ header {
     overflow: hidden;
 
     .card {
+      position: relative; /* Position for hover effects */
       flex: 0 0 auto;
       overflow: hidden;
       width: 150px;
@@ -238,11 +270,42 @@ header {
         width: 100%;
         height: auto;
         border-radius: 20px;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+          opacity: 0.4;
+        }
       }
 
       .card-title {
         font-size: 1rem;
         padding: 10px;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $main-color; /* Change text color on hover */
+        }
+      }
+
+      &::after {
+        content: "\25B6";
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      &:hover::after {
+        opacity: 1; /* Show the play button and icon on hover */
       }
     }
   }
@@ -294,4 +357,41 @@ footer {
       }
     }
   }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  background-color: black;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close-btn:hover {
+  color: red;
 }

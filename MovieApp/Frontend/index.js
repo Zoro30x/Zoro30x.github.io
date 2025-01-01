@@ -49,6 +49,11 @@ function navigateHero(direction) {
   updateHeroSlide(currentIndex);
 }
 
+document.querySelector(".btn-first").addEventListener("click", () => {
+  const movieId = movies[currentIndex].id;
+  window.location.href = `./Pages/details.html?type=movie&id=${movieId}`;
+});
+
 // Event Listeners for Navigation Buttons
 document
   .getElementById("next-btn")
@@ -60,6 +65,35 @@ document
 
 // Initialize the Hero Slider
 fetchMovies();
+
+// Select the header element
+const header = document.querySelector("header");
+
+// Add scroll event listener to the window
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    // Add the "scrolled" class when scrolled down
+    header.classList.add("scrolled");
+  } else {
+    // Remove the "scrolled" class when back at the top
+    header.classList.remove("scrolled");
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navLinks = document.querySelectorAll("nav a");
+  const currentPath = window.location.pathname;
+
+  navLinks.forEach((link) => {
+    const linkPath = link.getAttribute("href");
+
+    if (currentPath.includes(linkPath)) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+});
 
 async function fetchPopularMovies() {
   try {
@@ -129,6 +163,13 @@ function updateContentRow(containerId, items) {
     title.classList.add("card-title");
     title.textContent = item.title || item.name;
 
+    // Redirect to movie/TV show info page on click
+    card.addEventListener("click", () => {
+      const id = item.id;
+      const type = item.title ? "movie" : "tv"; // Check if it's a movie or TV show
+      window.location.href = `./Pages/details.html?type=${type}&id=${id}`;
+    });
+
     card.appendChild(img);
     card.appendChild(title);
     contentRow.appendChild(card);
@@ -179,4 +220,35 @@ document.querySelectorAll(".content-row").forEach((row) => {
     const walk = (x - startX) * 1.5; // Adjust the multiplier for speed
     row.scrollLeft = scrollLeft - walk; // Update the scroll position
   });
+});
+
+const trailerModal = document.getElementById("trailer-modal");
+const trailerVideo = document.getElementById("trailer-video");
+const watchTrailerBtn = document.querySelector(".btn-second");
+const closeBtn = document.querySelector(".close-btn");
+
+watchTrailerBtn.addEventListener("click", async () => {
+  const movieId = movies[currentIndex].id;
+  const response = await fetch(
+    `${BASE_URL}/movie/${movieId}/videos?api_key=${API_KEY}&language=en-US`
+  );
+  const data = await response.json();
+
+  const trailer = data.results.find((video) => video.type === "Trailer");
+
+  trailerVideo.src = `https://www.youtube.com/embed/${trailer.key}?autoplay=1`;
+
+  trailerModal.style.display = "flex";
+});
+
+closeBtn.addEventListener("click", () => {
+  trailerModal.style.display = "none";
+  trailerVideo.src = "";
+});
+
+window.addEventListener("click", (event) => {
+  if (event.target === trailerModal) {
+    trailerModal.style.display = "none";
+    trailerVideo.src = "";
+  }
 });
