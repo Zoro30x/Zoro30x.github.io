@@ -54,7 +54,7 @@ function displayContent(newContent) {
     card.addEventListener("click", () => {
       const id = content.id;
       const type = isMoviesPage ? "movie" : "tv";
-      window.location.href = `./Pages/details.html?type=${type}&id=${id}`;
+      window.location.href = `../Pages/details.html?type=${type}&id=${id}`;
     });
   });
 }

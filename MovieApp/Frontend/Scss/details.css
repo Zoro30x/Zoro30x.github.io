@@ -1,0 +1,508 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #0f0f0f;
+  color: #fff;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 4;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: height 0.3s ease, background-color 0.3s ease;
+}
+header.scrolled {
+  background-color: #0f0f0f;
+}
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+header .logo img {
+  height: 50px;
+}
+header .logo h6 {
+  font-size: 1.5rem;
+}
+header nav {
+  display: flex;
+  gap: 30px;
+}
+header nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  transition: color 0.6s;
+  padding-bottom: 2px;
+}
+header nav a:hover {
+  color: #ff0000;
+}
+header nav a.active {
+  border-bottom: 2px solid #ff0000;
+}
+header #icons {
+  display: flex;
+  gap: 30px;
+  font-size: 20px;
+  cursor: pointer;
+}
+header #icons i {
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+header #icons i:hover {
+  color: #ff0000;
+}
+
+.hero-section {
+  position: relative;
+  padding: 8rem 0;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  text-align: justify;
+  gap: 7pc;
+}
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.hero-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-image: linear-gradient(to top, #0f0f0f, rgba(0, 0, 0, 0));
+}
+.hero-section .hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 45%;
+  padding-left: 110px;
+}
+.hero-section .hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.hero-section .hero-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+.hero-section .hero-text .hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+.hero-section .hero-text .hero-buttons button {
+  padding: 15px 30px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.hero-section .hero-text .hero-buttons .btn-first {
+  background-color: #ff0000;
+  border: none;
+  border-radius: 20px;
+}
+.hero-section .hero-text .hero-buttons .btn-first:hover {
+  background-color: #ffffff;
+  color: #0f0f0f;
+}
+.hero-section .hero-text .hero-buttons .btn-second {
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 20px;
+}
+.hero-section .hero-text .hero-buttons .btn-second:hover {
+  background-color: #fff;
+  color: #ff0000;
+}
+.hero-section .hero-image {
+  position: relative;
+  z-index: 2;
+}
+.hero-section .hero-image img {
+  width: 300px;
+  border-radius: 10px;
+}
+.hero-section .hero-navigation {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.hero-section .hero-navigation .prev {
+  margin-left: 20px;
+}
+.hero-section .hero-navigation .next {
+  margin-right: 20px;
+}
+.hero-section .hero-navigation button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.hero-section .hero-navigation button:hover {
+  transform: scale(2.1);
+}
+
+#content-section {
+  margin: 40px 110px 40px 110px;
+}
+#content-section .content-text {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40px;
+}
+#content-section .content-text h2 {
+  font-size: 1.5rem;
+}
+#content-section .content-text .btn-third {
+  padding: 5px 20px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 20px;
+}
+#content-section .content-text .btn-third:hover {
+  background-color: #fff;
+  color: #ff0000;
+}
+#content-section .content-text .btn-third a {
+  text-decoration: none;
+  color: #fff;
+}
+#content-section .content-text .btn-third a:hover {
+  color: #ff0000;
+}
+#content-section .content-row {
+  display: flex;
+  gap: 15px;
+  overflow: hidden;
+}
+#content-section .content-row .card {
+  position: relative; /* Position for hover effects */
+  flex: 0 0 auto;
+  overflow: hidden;
+  width: 150px;
+}
+#content-section .content-row .card img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  transition: opacity 0.3s ease;
+}
+#content-section .content-row .card img:hover {
+  opacity: 0.4;
+}
+#content-section .content-row .card .card-title {
+  font-size: 1rem;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+#content-section .content-row .card .card-title:hover {
+  color: #ff0000; /* Change text color on hover */
+}
+#content-section .content-row .card::after {
+  content: "▶";
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+#content-section .content-row .card:hover::after {
+  opacity: 1; /* Show the play button and icon on hover */
+}
+
+footer {
+  background-image: url("./Assets/footer-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 4.5rem 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+footer .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+footer .logo img {
+  height: 50px;
+}
+footer .logo h6 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+footer .links {
+  display: flex;
+  gap: 200px;
+}
+footer .links ul {
+  list-style: none;
+}
+footer .links ul li {
+  margin-bottom: 20px;
+  cursor: default;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+footer .links ul li:hover {
+  color: #ff0000;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  background-color: black;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close-btn:hover {
+  color: red;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+header {
+  z-index: 10;
+  transition: background-color 0.3s;
+}
+header.scrolled {
+  background-color: #0f0f0f;
+}
+
+.details-container {
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  gap: 2pc;
+}
+.details-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.details-container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, #0f0f0f, rgba(0, 0, 0, 0));
+}
+.details-container .poster {
+  z-index: 2;
+  max-width: 300px;
+  margin-left: 3rem;
+}
+.details-container .poster img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+.details-container .details-content {
+  max-width: 40%;
+  z-index: 2;
+}
+.details-container .details-content #title {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.details-container .details-content .genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1.4rem;
+}
+.details-container .details-content .genres .genre {
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+}
+.details-container .details-content .description {
+  font-size: 1rem;
+  text-align: justify;
+}
+.details-container .details-content .casts h3 {
+  font-size: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 5px;
+}
+.details-container .details-content .casts .cast-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.details-container .details-content .casts .cast-list .cast-member {
+  text-align: left;
+  max-width: 100px;
+}
+.details-container .details-content .casts .cast-list .cast-member img {
+  width: 100%;
+  height: auto;
+}
+.details-container .details-content .casts .cast-list .cast-member p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.trailer h2 {
+  font-size: 2rem;
+  padding-left: 6rem;
+  padding-bottom: 2rem;
+}
+.trailer iframe {
+  display: block;
+  width: 100%;
+  max-width: 1300px;
+  height: 700px;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.similar {
+  padding: 3rem 0rem 3rem 5.5rem;
+}
+.similar .content-text h2 {
+  font-size: 2rem;
+  padding-bottom: 3rem;
+}
+.similar .content-row {
+  display: flex;
+  gap: 15px;
+  overflow: hidden;
+  width: 1300px;
+}
+.similar .content-row .card {
+  position: relative;
+  flex: 0 0 auto;
+  overflow: hidden;
+  width: 180px;
+}
+.similar .content-row .card img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  transition: opacity 0.3s ease;
+}
+.similar .content-row .card img:hover {
+  opacity: 0.4;
+}
+.similar .content-row .card .card-title {
+  font-size: 1rem;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+.similar .content-row .card .card-title:hover {
+  color: #ff0000; /* Change text color on hover */
+}
+.similar .content-row .card::after {
+  content: "▶";
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.similar .content-row .card:hover::after {
+  opacity: 1;
+}
+
+footer {
+  background-image: url("../Assets/footer-bg.jpg");
+}/*# sourceMappingURL=details.css.map */
