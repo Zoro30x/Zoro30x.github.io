@@ -23,7 +23,7 @@
         <a href="../Pages/tvseries.html">TV Series</a>
       </nav>
       <div id="icons">
-        <i class="fa-regular fa-user"></i>
+        <i class="fa-regular fa-user user-icon"></i>
         <i class="fa-regular fa-heart"></i>
       </div>
     </header>
@@ -37,6 +37,82 @@
       </section>
       <div class="content-button">
         <button id="load-more">Load More</button>
+      </div>
+      <div id="login-signup-modal" class="modal-wrapper">
+        <div class="modaltwo">
+          <button id="close-btn">&times;</button>
+          <!-- Form Wrapper -->
+          <div id="form-wrapper" class="form-wrapper">
+            <!-- Login Form -->
+            <div id="login-form" class="form-group visible">
+              <h2>Welcome back</h2>
+              <form>
+                <div class="form-group">
+                  <label for="login-email">Email Address</label>
+                  <input
+                    type="email"
+                    id="login-email"
+                    placeholder="Email"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="login-password">Password</label>
+                  <input
+                    type="password"
+                    id="login-password"
+                    placeholder="Password"
+                    required
+                  />
+                </div>
+                <button type="submit" class="primary-btn">Login</button>
+              </form>
+              <p>
+                Don't have an account?
+                <span class="toggle-form" id="signup-toggle-btn">Register</span>
+              </p>
+            </div>
+
+            <!-- Sign Up Form -->
+            <div id="signup-form" class="form-group hidden">
+              <h2>Create an Account</h2>
+              <form>
+                <div class="form-group">
+                  <label for="signup-name">Name</label>
+                  <input
+                    type="text"
+                    id="signup-name"
+                    placeholder="Name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="signup-email">Email Address</label>
+                  <input
+                    type="email"
+                    id="signup-email"
+                    placeholder="Email"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="signup-password">Password</label>
+                  <input
+                    type="password"
+                    id="signup-password"
+                    placeholder="Password"
+                    required
+                  />
+                </div>
+                <button type="submit" class="primary-btn">Register</button>
+              </form>
+              <p>
+                Have an account?
+                <span class="toggle-form" id="login-toggle-btn">Login</span>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
     <footer>
@@ -65,5 +141,6 @@
       </div>
     </footer>
     <script src="../Js/moviestv.js"></script>
+    <script src="../Js/loginsignup.js"></script>
   </body>
 </html>

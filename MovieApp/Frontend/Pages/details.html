@@ -10,82 +10,160 @@
     <link rel="stylesheet" href="../Scss/details.css" />
     <title>Details - Stream Vibe</title>
   </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <img src="../Assets/Logo.png" alt="Stream Vibe Logo" />
+        <h6>Stream Vibe</h6>
+      </div>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="../Pages/movies.html">Movies</a>
+        <a href="../Pages/tvseries.html">TV Series</a>
+      </nav>
+      <div id="icons">
+        <i class="fa-regular fa-user user-icon"></i>
+        <i class="fa-regular fa-heart"></i>
+      </div>
+    </header>
+    <main>
+      <section class="details-container">
+        <div class="poster">
+          <img id="poster" src="" alt="Movie Poster" />
+        </div>
+        <div class="details-content">
+          <h1 id="title"></h1>
+          <div id="genres" class="genres"></div>
+          <p id="description" class="description"></p>
+          <div class="casts">
+            <h3>Casts</h3>
+            <div id="cast-list" class="cast-list"></div>
+          </div>
+        </div>
+      </section>
+      <section class="trailer">
+        <h2>International Trailer</h2>
+        <iframe
+          id="trailer"
+          src=""
+          title="Trailer"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </section>
+      <section class="similar">
+        <div class="content-container">
+          <div class="content-text">
+            <h2>Similar</h2>
+          </div>
+          <div class="content-row"></div>
+        </div>
+      </section>
+      <div id="login-signup-modal" class="modal-wrapper">
+        <div class="modaltwo">
+          <button id="close-btn">&times;</button>
+          <!-- Form Wrapper -->
+          <div id="form-wrapper" class="form-wrapper">
+            <!-- Login Form -->
+            <div id="login-form" class="form-group visible">
+              <h2>Welcome back</h2>
+              <form>
+                <div class="form-group">
+                  <label for="login-email">Email Address</label>
+                  <input
+                    type="email"
+                    id="login-email"
+                    placeholder="Email"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="login-password">Password</label>
+                  <input
+                    type="password"
+                    id="login-password"
+                    placeholder="Password"
+                    required
+                  />
+                </div>
+                <button type="submit" class="primary-btn">Login</button>
+              </form>
+              <p>
+                Don't have an account?
+                <span class="toggle-form" id="signup-toggle-btn">Register</span>
+              </p>
+            </div>
+
+            <!-- Sign Up Form -->
+            <div id="signup-form" class="form-group hidden">
+              <h2>Create an Account</h2>
+              <form>
+                <div class="form-group">
+                  <label for="signup-name">Name</label>
+                  <input
+                    type="text"
+                    id="signup-name"
+                    placeholder="Name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="signup-email">Email Address</label>
+                  <input
+                    type="email"
+                    id="signup-email"
+                    placeholder="Email"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="signup-password">Password</label>
+                  <input
+                    type="password"
+                    id="signup-password"
+                    placeholder="Password"
+                    required
+                  />
+                </div>
+                <button type="submit" class="primary-btn">Register</button>
+              </form>
+              <p>
+                Have an account?
+                <span class="toggle-form" id="login-toggle-btn">Login</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="logo">
+        <img src="../Assets/Logo.png" alt="Stream Vibe Logo" />
+        <h6>Stream Vibe</h6>
+      </div>
+      <div class="links">
+        <ul>
+          <li>Home</li>
+          <li>Contact us</li>
+          <li>Terms of services</li>
+          <li>About us</li>
+        </ul>
+        <ul>
+          <li>Live</li>
+          <li>FAQ</li>
+          <li>Premium</li>
+          <li>Privacy policy</li>
+        </ul>
+        <ul>
+          <li>You must watch</li>
+          <li>Recent release</li>
+          <li>Top IMDB</li>
+        </ul>
+      </div>
+    </footer>
+    <script src="../Js/details.js"></script>
+    <script src="../Js/loginsignup.js"></script>
+  </body>
 </html>
-<body>
-  <header>
-    <div class="logo">
-      <img src="../Assets/Logo.png" alt="Stream Vibe Logo" />
-      <h6>Stream Vibe</h6>
-    </div>
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="../Pages/movies.html">Movies</a>
-      <a href="../Pages/tvseries.html">TV Series</a>
-    </nav>
-    <div id="icons">
-      <i class="fa-regular fa-user"></i>
-      <i class="fa-regular fa-heart"></i>
-    </div>
-  </header>
-  <main>
-    <section class="details-container">
-      <div class="poster">
-        <img id="poster" src="" alt="Movie Poster" />
-      </div>
-      <div class="details-content">
-        <h1 id="title"></h1>
-        <div id="genres" class="genres"></div>
-        <p id="description" class="description"></p>
-        <div class="casts">
-          <h3>Casts</h3>
-          <div id="cast-list" class="cast-list"></div>
-        </div>
-      </div>
-    </section>
-    <section class="trailer">
-      <h2>International Trailer</h2>
-      <iframe
-        id="trailer"
-        src=""
-        title="Trailer"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </section>
-    <section class="similar">
-      <div class="content-container">
-        <div class="content-text">
-          <h2>Similar</h2>
-        </div>
-        <div class="content-row"></div>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <div class="logo">
-      <img src="../Assets/Logo.png" alt="Stream Vibe Logo" />
-      <h6>Stream Vibe</h6>
-    </div>
-    <div class="links">
-      <ul>
-        <li>Home</li>
-        <li>Contact us</li>
-        <li>Terms of services</li>
-        <li>About us</li>
-      </ul>
-      <ul>
-        <li>Live</li>
-        <li>FAQ</li>
-        <li>Premium</li>
-        <li>Privacy policy</li>
-      </ul>
-      <ul>
-        <li>You must watch</li>
-        <li>Recent release</li>
-        <li>Top IMDB</li>
-      </ul>
-    </div>
-  </footer>
-  <script src="../Js/details.js"></script>
-</body>
