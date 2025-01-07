@@ -1,0 +1,120 @@
+@import "../index.scss";
+
+.modal-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(3px);
+  z-index: 1000;
+  visibility: hidden; // Initially hidden
+  opacity: 0; // Initially invisible
+  transition: visibility 0s, opacity 0.3s ease-in-out;
+
+  &.active {
+    visibility: visible;
+    opacity: 1; // Makes the modal visible
+  }
+
+  .modaltwo {
+    background: #1b1b1b;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    padding: $spacing-mobile;
+    position: relative;
+    color: $txt-color;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+
+    #close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: transparent;
+      border: none;
+      color: $txt-color;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    #signup-form h2,
+    #login-form h2 {
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 1.5rem;
+      color: $main-color;
+    }
+
+    .form-wrapper {
+      &.hidden {
+        display: none;
+      }
+
+      &.visible {
+        display: block;
+      }
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+
+      label {
+        display: block;
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+        color: lighten($txt-color, 20%);
+      }
+
+      input {
+        width: 94%;
+        padding: 10px;
+        border: 1px solid #333;
+        border-radius: 5px;
+        background: #222;
+        color: $txt-color;
+        font-size: 1rem;
+      }
+    }
+
+    .primary-btn {
+      width: 94%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      background: $main-color;
+      color: $body-bg;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: darken($main-color, 10%);
+      }
+    }
+
+    p {
+      text-align: center;
+      font-size: 0.85rem;
+      color: lighten($txt-color, 20%);
+
+      .toggle-form {
+        color: $main-color;
+        cursor: pointer;
+        text-decoration: underline;
+        margin-left: 5px;
+
+        &:hover {
+          color: darken($main-color, 10%);
+        }
+      }
+    }
+  }
+}

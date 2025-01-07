@@ -10,6 +10,20 @@ header {
   &.scrolled {
     background-color: $body-bg;
   }
+
+  #logout-btn {
+    display: none;
+    background-color: $main-color;
+    border: none;
+    padding: 7px 7px;
+    color: $txt-color;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($main-color, 20%);
+    }
+  }
 }
 
 .details-container {
@@ -233,6 +247,6 @@ header {
   }
 }
 
-footer {
+body footer {
   background-image: url("../Assets/footer-bg.jpg");
 }
