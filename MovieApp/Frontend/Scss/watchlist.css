@@ -1,0 +1,1184 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #0f0f0f;
+  color: #fff;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 4;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: height 0.3s ease, background-color 0.3s ease;
+}
+header.scrolled {
+  background-color: #0f0f0f;
+}
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+header .logo img {
+  height: 50px;
+}
+header .logo h6 {
+  font-size: 1.5rem;
+}
+header nav {
+  display: flex;
+  gap: 30px;
+}
+header nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  transition: color 0.6s;
+  padding-bottom: 2px;
+}
+header nav a:hover {
+  color: #ff0000;
+}
+header nav a.active {
+  border-bottom: 2px solid #ff0000;
+}
+header #icons {
+  display: flex;
+  gap: 30px;
+  font-size: 20px;
+  cursor: pointer;
+}
+header #icons i {
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+header #icons i:hover {
+  color: #ff0000;
+}
+
+.hero-section {
+  position: relative;
+  padding: 8rem 0;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  text-align: justify;
+  gap: 7pc;
+}
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.hero-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-image: linear-gradient(to top, #0f0f0f, rgba(0, 0, 0, 0));
+}
+.hero-section .hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 45%;
+  padding-left: 110px;
+}
+.hero-section .hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.hero-section .hero-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+.hero-section .hero-text .hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+.hero-section .hero-text .hero-buttons button {
+  padding: 15px 30px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.hero-section .hero-text .hero-buttons .btn-first {
+  background-color: #ff0000;
+  border: none;
+  border-radius: 20px;
+}
+.hero-section .hero-text .hero-buttons .btn-first:hover {
+  background-color: #ffffff;
+  color: #0f0f0f;
+}
+.hero-section .hero-text .hero-buttons .btn-second {
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 20px;
+}
+.hero-section .hero-text .hero-buttons .btn-second:hover {
+  background-color: #fff;
+  color: #ff0000;
+}
+.hero-section .hero-image {
+  position: relative;
+  z-index: 2;
+}
+.hero-section .hero-image img {
+  width: 300px;
+  border-radius: 10px;
+}
+.hero-section .hero-navigation {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.hero-section .hero-navigation .prev {
+  margin-left: 20px;
+}
+.hero-section .hero-navigation .next {
+  margin-right: 20px;
+}
+.hero-section .hero-navigation button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.hero-section .hero-navigation button:hover {
+  transform: scale(2.1);
+}
+
+#content-section {
+  margin: 40px 110px 40px 110px;
+}
+#content-section .content-text {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40px;
+}
+#content-section .content-text h2 {
+  font-size: 1.5rem;
+}
+#content-section .content-text .btn-third {
+  padding: 5px 20px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 20px;
+}
+#content-section .content-text .btn-third:hover {
+  background-color: #fff;
+  color: #ff0000;
+}
+#content-section .content-text .btn-third a {
+  text-decoration: none;
+  color: #fff;
+}
+#content-section .content-text .btn-third a:hover {
+  color: #ff0000;
+}
+#content-section .content-row {
+  display: flex;
+  gap: 15px;
+  overflow: hidden;
+}
+#content-section .content-row .card {
+  position: relative; /* Position for hover effects */
+  flex: 0 0 auto;
+  overflow: hidden;
+  width: 150px;
+}
+#content-section .content-row .card img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  transition: opacity 0.3s ease;
+}
+#content-section .content-row .card img:hover {
+  opacity: 0.4;
+}
+#content-section .content-row .card .card-title {
+  font-size: 1rem;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+#content-section .content-row .card .card-title:hover {
+  color: #ff0000; /* Change text color on hover */
+}
+#content-section .content-row .card::after {
+  content: "▶";
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+#content-section .content-row .card:hover::after {
+  opacity: 1; /* Show the play button and icon on hover */
+}
+
+footer {
+  background-image: url("./Assets/footer-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 4.5rem 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+footer .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+footer .logo img {
+  height: 50px;
+}
+footer .logo h6 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+footer .links {
+  display: flex;
+  gap: 200px;
+}
+footer .links ul {
+  list-style: none;
+}
+footer .links ul li {
+  margin-bottom: 20px;
+  cursor: default;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+footer .links ul li:hover {
+  color: #ff0000;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+  justify-content: center;
+  align-items: center;
+}
+.modal .modal-content {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  background-color: black;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+.modal .modal-content .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.modal .modal-content .close-btn:hover {
+  color: red;
+}
+
+.modal-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease-in-out;
+}
+.modal-wrapper.active {
+  visibility: visible;
+  opacity: 1;
+}
+.modal-wrapper .modaltwo {
+  background: #1b1b1b;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  height: auto;
+  padding: 20px;
+  position: relative;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+.modal-wrapper .modaltwo #close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+.modal-wrapper .modaltwo #signup-form h2,
+.modal-wrapper .modaltwo #login-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #ff0000;
+}
+.modal-wrapper .modaltwo .form-wrapper.hidden {
+  display: none;
+}
+.modal-wrapper .modaltwo .form-wrapper.visible {
+  display: block;
+}
+.modal-wrapper .modaltwo .form-group {
+  margin-bottom: 15px;
+}
+.modal-wrapper .modaltwo .form-group label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: white;
+}
+.modal-wrapper .modaltwo .form-group input {
+  width: 94%;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background: #222;
+  color: #fff;
+  font-size: 1rem;
+}
+.modal-wrapper .modaltwo .primary-btn {
+  width: 94%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  background: #ff0000;
+  color: #0f0f0f;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.modal-wrapper .modaltwo .primary-btn:hover {
+  background: #cc0000;
+}
+.modal-wrapper .modaltwo p {
+  text-align: center;
+  font-size: 0.85rem;
+  color: white;
+}
+.modal-wrapper .modaltwo p .toggle-form {
+  color: #ff0000;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-left: 5px;
+}
+.modal-wrapper .modaltwo p .toggle-form:hover {
+  color: #cc0000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #0f0f0f;
+  color: #fff;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 4;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: height 0.3s ease, background-color 0.3s ease;
+}
+header.scrolled {
+  background-color: #0f0f0f;
+}
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+header .logo img {
+  height: 50px;
+}
+header .logo h6 {
+  font-size: 1.5rem;
+}
+header nav {
+  display: flex;
+  gap: 30px;
+}
+header nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  transition: color 0.6s;
+  padding-bottom: 2px;
+}
+header nav a:hover {
+  color: #ff0000;
+}
+header nav a.active {
+  border-bottom: 2px solid #ff0000;
+}
+header #icons {
+  display: flex;
+  gap: 30px;
+  font-size: 20px;
+  cursor: pointer;
+}
+header #icons i {
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+header #icons i:hover {
+  color: #ff0000;
+}
+
+.hero-section {
+  position: relative;
+  padding: 8rem 0;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  text-align: justify;
+  gap: 7pc;
+}
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.hero-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-image: linear-gradient(to top, #0f0f0f, rgba(0, 0, 0, 0));
+}
+.hero-section .hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 45%;
+  padding-left: 110px;
+}
+.hero-section .hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.hero-section .hero-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+.hero-section .hero-text .hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+.hero-section .hero-text .hero-buttons button {
+  padding: 15px 30px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.hero-section .hero-text .hero-buttons .btn-first {
+  background-color: #ff0000;
+  border: none;
+  border-radius: 20px;
+}
+.hero-section .hero-text .hero-buttons .btn-first:hover {
+  background-color: #ffffff;
+  color: #0f0f0f;
+}
+.hero-section .hero-text .hero-buttons .btn-second {
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 20px;
+}
+.hero-section .hero-text .hero-buttons .btn-second:hover {
+  background-color: #fff;
+  color: #ff0000;
+}
+.hero-section .hero-image {
+  position: relative;
+  z-index: 2;
+}
+.hero-section .hero-image img {
+  width: 300px;
+  border-radius: 10px;
+}
+.hero-section .hero-navigation {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.hero-section .hero-navigation .prev {
+  margin-left: 20px;
+}
+.hero-section .hero-navigation .next {
+  margin-right: 20px;
+}
+.hero-section .hero-navigation button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.hero-section .hero-navigation button:hover {
+  transform: scale(2.1);
+}
+
+#content-section {
+  margin: 40px 110px 40px 110px;
+}
+#content-section .content-text {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40px;
+}
+#content-section .content-text h2 {
+  font-size: 1.5rem;
+}
+#content-section .content-text .btn-third {
+  padding: 5px 20px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 20px;
+}
+#content-section .content-text .btn-third:hover {
+  background-color: #fff;
+  color: #ff0000;
+}
+#content-section .content-text .btn-third a {
+  text-decoration: none;
+  color: #fff;
+}
+#content-section .content-text .btn-third a:hover {
+  color: #ff0000;
+}
+#content-section .content-row {
+  display: flex;
+  gap: 15px;
+  overflow: hidden;
+}
+#content-section .content-row .card {
+  position: relative; /* Position for hover effects */
+  flex: 0 0 auto;
+  overflow: hidden;
+  width: 150px;
+}
+#content-section .content-row .card img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  transition: opacity 0.3s ease;
+}
+#content-section .content-row .card img:hover {
+  opacity: 0.4;
+}
+#content-section .content-row .card .card-title {
+  font-size: 1rem;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+#content-section .content-row .card .card-title:hover {
+  color: #ff0000; /* Change text color on hover */
+}
+#content-section .content-row .card::after {
+  content: "▶";
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+#content-section .content-row .card:hover::after {
+  opacity: 1; /* Show the play button and icon on hover */
+}
+
+footer {
+  background-image: url("./Assets/footer-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 4.5rem 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+footer .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+footer .logo img {
+  height: 50px;
+}
+footer .logo h6 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+footer .links {
+  display: flex;
+  gap: 200px;
+}
+footer .links ul {
+  list-style: none;
+}
+footer .links ul li {
+  margin-bottom: 20px;
+  cursor: default;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+footer .links ul li:hover {
+  color: #ff0000;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+  justify-content: center;
+  align-items: center;
+}
+.modal .modal-content {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  background-color: black;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+.modal .modal-content .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.modal .modal-content .close-btn:hover {
+  color: red;
+}
+
+.modal-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease-in-out;
+}
+.modal-wrapper.active {
+  visibility: visible;
+  opacity: 1;
+}
+.modal-wrapper .modaltwo {
+  background: #1b1b1b;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  height: auto;
+  padding: 20px;
+  position: relative;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+.modal-wrapper .modaltwo #close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+.modal-wrapper .modaltwo #signup-form h2,
+.modal-wrapper .modaltwo #login-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #ff0000;
+}
+.modal-wrapper .modaltwo .form-wrapper.hidden {
+  display: none;
+}
+.modal-wrapper .modaltwo .form-wrapper.visible {
+  display: block;
+}
+.modal-wrapper .modaltwo .form-group {
+  margin-bottom: 15px;
+}
+.modal-wrapper .modaltwo .form-group label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: white;
+}
+.modal-wrapper .modaltwo .form-group input {
+  width: 94%;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background: #222;
+  color: #fff;
+  font-size: 1rem;
+}
+.modal-wrapper .modaltwo .primary-btn {
+  width: 94%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  background: #ff0000;
+  color: #0f0f0f;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.modal-wrapper .modaltwo .primary-btn:hover {
+  background: #cc0000;
+}
+.modal-wrapper .modaltwo p {
+  text-align: center;
+  font-size: 0.85rem;
+  color: white;
+}
+.modal-wrapper .modaltwo p .toggle-form {
+  color: #ff0000;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-left: 5px;
+}
+.modal-wrapper .modaltwo p .toggle-form:hover {
+  color: #cc0000;
+}
+
+header {
+  transition: height 0.3s ease, background-color 0.3s ease;
+}
+header.scrolled {
+  background-color: #0f0f0f;
+}
+header nav a {
+  transition: color 0.6s;
+}
+header nav a:hover {
+  color: #ff0000;
+}
+header nav a.active {
+  border-bottom: 2px solid #ff0000;
+}
+header .header-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background-image: url("../Assets/footer-bg.jpg");
+  background-size: cover;
+  z-index: -1;
+}
+header .header-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+header .header-background::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-image: linear-gradient(to top, #0f0f0f, rgba(0, 0, 0, 0));
+}
+
+.search {
+  margin-top: 9pc;
+  margin-bottom: 3pc;
+  display: flex;
+  gap: 10px;
+  padding-left: 100px;
+}
+.search input {
+  width: 300px;
+  padding-left: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+.search button {
+  padding: 10px 20px;
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.search button:hover {
+  background-color: #990000;
+}
+
+.content-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.content-row .card {
+  position: relative;
+  width: 100%;
+}
+.content-row .card img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  transition: opacity 0.3s ease;
+}
+.content-row .card img:hover {
+  opacity: 0.4;
+}
+.content-row .card .card-title {
+  transition: color 0.3s ease;
+}
+.content-row .card .card-title:hover {
+  color: #ff0000; /* Add a theme-based highlight color */
+}
+.content-row .card::after {
+  content: "▶";
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.content-row .card:hover::after {
+  opacity: 1;
+}
+
+.content-button {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+}
+.content-button #load-more {
+  padding: 5px 20px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 20px;
+}
+.content-button #load-more:hover {
+  background-color: #fff;
+  color: #ff0000;
+}
+.content-button #load-more a {
+  text-decoration: none;
+  color: #fff;
+}
+.content-button #load-more a:hover {
+  color: #ff0000;
+}
+
+footer {
+  background-image: url("../Assets/footer-bg.jpg");
+}
+
+.top-section {
+  margin-top: 12pc;
+  margin-left: 7pc;
+  margin-bottom: 8pc;
+  text-align: center;
+}
+.top-section .watchlist-heading {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 3pc;
+  text-align: left;
+}
+.top-section .toggle-bar {
+  display: inline-block;
+  border: 2px solid #ff0000;
+  border-radius: 20px;
+}
+.top-section .toggle-bar button {
+  border: none;
+  padding: 0.5rem 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: transparent;
+  color: #fff;
+}
+.top-section .toggle-bar button:hover {
+  background-color: #ff0000;
+  color: #fff;
+}
+.top-section .toggle-bar #mv-btn {
+  border-top-left-radius: 17px;
+  border-bottom-left-radius: 17px;
+}
+.top-section .toggle-bar #tv-btn {
+  border-top-right-radius: 17px;
+  border-bottom-right-radius: 17px;
+}
+
+.list-section {
+  margin-bottom: 10pc;
+  margin-left: 7pc;
+}
+.list-section h2 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+.list-section .list-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6rem;
+  overflow: none;
+}
+.list-section .list-container .card {
+  flex: 0 0 auto;
+  width: 200px;
+  height: 350px;
+  background-color: #0f0f0f;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.list-section .list-container .card img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.list-section .list-container .card .content-row {
+  display: none;
+}
+.list-section .list-container .card .controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.list-section .list-container .card .controls button {
+  color: #fff;
+  padding: 0.5rem 1.6rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+.list-section .list-container .card .controls .edit-btn {
+  background-color: #ff0000;
+}
+.list-section .list-container .card .controls .edit-btn:hover {
+  background-color: #660000;
+}
+.list-section .list-container .card .controls .delete-btn {
+  background-color: transparent;
+  border: 2px solid #ff0000;
+}
+.list-section .list-container .card .controls .delete-btn:hover {
+  background-color: #ff0000;
+  color: #0f0f0f;
+}
+
+.edit-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 1000;
+}
+.edit-modal.hidden {
+  display: none;
+}
+.edit-modal .modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.edit-modal .modal-content h3 {
+  font-size: 1.25rem;
+  color: #ff0000;
+  padding-bottom: 10px;
+}
+.edit-modal .modal-content select {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 2px solid #0f0f0f;
+  width: 100%;
+  color: #ff0000;
+  cursor: pointer;
+}
+.edit-modal .modal-content .modal-buttons {
+  display: flex;
+  gap: 10px;
+}
+.edit-modal .modal-content .modal-buttons button {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.edit-modal .modal-content .modal-buttons #save-category {
+  background-color: #ff0000;
+  color: #fff;
+}
+.edit-modal .modal-content .modal-buttons #save-category:hover {
+  background-color: #660000;
+}
+.edit-modal .modal-content .modal-buttons #cancel-edit {
+  background-color: #0f0f0f;
+  border: 2px solid #ff0000;
+  color: #fff;
+}
+.edit-modal .modal-content .modal-buttons #cancel-edit:hover {
+  background-color: #ff0000;
+  color: #0f0f0f;
+}/*# sourceMappingURL=watchlist.css.map */

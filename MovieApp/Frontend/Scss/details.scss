@@ -44,6 +44,7 @@ header {
   }
 
   .poster {
+    position: relative;
     z-index: 2;
     max-width: 300px;
     margin-left: 3rem;
@@ -52,6 +53,40 @@ header {
       width: 100%;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    .icon-button {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .watchlist-button {
+      top: 10px;
+      left: 10px;
+      &:hover {
+        background-color: $main-color;
+        color: $txt-color;
+      }
+    }
+
+    .favorites-button {
+      top: 10px;
+      right: 10px;
+      &:hover {
+        background-color: $main-color;
+        color: $txt-color;
+      }
     }
   }
 

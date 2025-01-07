@@ -16,6 +16,10 @@ const posterElement = document.getElementById("poster");
 const castListElement = document.getElementById("cast-list");
 const trailerElement = document.getElementById("trailer");
 
+// Watch Later and Favorites buttons
+const watchLaterButton = document.getElementById("add-watch-later");
+const favoritesButton = document.getElementById("add-favorites");
+
 // Fetch Movie/TV Show Details
 async function fetchDetails() {
   try {
@@ -70,20 +74,6 @@ async function fetchDetails() {
 }
 
 fetchDetails();
-
-const header = document.querySelector("header");
-
-// Add scroll event listener to the window
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 50) {
-    // Add the "scrolled" class when scrolled down
-    header.classList.add("scrolled");
-  } else {
-    // Remove the "scrolled" class when back at the top
-    header.classList.remove("scrolled");
-  }
-});
-
 async function fetchSimilarContent() {
   try {
     const response = await fetch(
@@ -126,37 +116,54 @@ function updateSimilarContentRow(items) {
   });
 }
 
-document.querySelectorAll(".similar .content-row").forEach((row) => {
+// Initialize page load
+
+fetchSimilarContent();
+
+// Scroll effect for header
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+
+document.querySelectorAll(".content-row").forEach((row) => {
   let isDragging = false;
   let startX;
   let scrollLeft;
 
+  // Mouse down event to start dragging
   row.addEventListener("mousedown", (e) => {
     isDragging = true;
     row.classList.add("dragging");
-    startX = e.pageX - row.offsetLeft;
-    scrollLeft = row.scrollLeft;
-    e.preventDefault();
+    startX = e.pageX - row.offsetLeft; // Capture the initial X position
+    scrollLeft = row.scrollLeft; // Record the scroll position
+    e.preventDefault(); // Prevent default behavior (e.g., text selection)
   });
 
+  // Mouse leave event to stop dragging
   row.addEventListener("mouseleave", () => {
     isDragging = false;
     row.classList.remove("dragging");
   });
 
+  // Mouse up event to stop dragging
   row.addEventListener("mouseup", () => {
     isDragging = false;
     row.classList.remove("dragging");
   });
 
+  // Mouse move event to perform dragging
   row.addEventListener("mousemove", (e) => {
-    if (!isDragging) return;
-    const x = e.pageX - row.offsetLeft;
-    const walk = (x - startX) * 1.5;
-    row.scrollLeft = scrollLeft - walk;
-  });
-});
+    if (!isDragging) return; // Only drag if the mouse is down
+    e.preventDefault(); // Prevent default behavior
 
-fetchDetails().then(() => {
-  fetchSimilarContent();
+    const x = e.pageX - row.offsetLeft; // Current X position
+    const walk = (x - startX) * 1.5; // Adjust the multiplier for speed
+    row.scrollLeft = scrollLeft - walk; // Update the scroll position
+  });
 });

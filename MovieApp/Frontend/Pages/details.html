@@ -23,14 +23,32 @@
         <a href="../Pages/tvseries.html">TV Series</a>
       </nav>
       <div id="icons">
-        <i class="fa-regular fa-user user-icon"></i>
-        <i class="fa-regular fa-heart"></i>
+        <div class="user-icon">
+          <i class="fa-regular fa-user"></i>
+        </div>
+        <a href="../Pages/watchlist.html">
+          <i class="fa-regular fa-heart"></i>
+        </a>
       </div>
     </header>
     <main>
       <section class="details-container">
         <div class="poster">
           <img id="poster" src="" alt="Movie Poster" />
+          <button
+            class="icon-button watchlist-button"
+            id="add-watch-later"
+            data-category="watchLater"
+          >
+            <i class="fa fa-plus"></i>
+          </button>
+          <button
+            class="icon-button favorites-button"
+            id="add-favorites"
+            data-category="favorites"
+          >
+            <i class="fa fa-heart"></i>
+          </button>
         </div>
         <div class="details-content">
           <h1 id="title"></h1>

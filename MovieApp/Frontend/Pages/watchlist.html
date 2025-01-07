@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="path/to/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../Scss/watchlist.css" />
+    <title>WatchList - Stream Vibe</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-background"></div>
+      <div class="logo">
+        <img src="../Assets/Logo.png" alt="Stream Vibe Logo" />
+        <h6>Stream Vibe</h6>
+      </div>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="../Pages/movies.html">Movies</a>
+        <a href="../Pages/tvseries.html">TV Series</a>
+      </nav>
+      <div id="icons">
+        <div class="user-icon">
+          <i class="fa-regular fa-user"></i>
+        </div>
+        <a href="../Pages/watchlist.html">
+          <i class="fa-regular fa-heart"></i>
+        </a>
+      </div>
+    </header>
+    <main>
+      <section class="top-section">
+        <h1 class="watchlist-heading">Watchlist</h1>
+        <div class="toggle-bar">
+          <button id="mv-btn">Movies</button
+          ><!--
+          --><button id="tv-btn">TV Series</button>
+        </div>
+      </section>
+      <section class="list-section favourites">
+        <h2>Favourites</h2>
+        <div class="list-container">
+          <div class="card">
+            <div class="content-row"></div>
+            <div class="controls">
+              <button class="edit-btn">
+                Edit <i class="fa-solid fa-pen"></i>
+              </button>
+              <button class="delete-btn">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="list-section watchlater">
+        <h2>Watch Later</h2>
+        <div class="list-container">
+          <div class="card">
+            <div class="content-row"></div>
+            <div class="controls">
+              <button class="edit-btn">
+                Edit <i class="fa-solid fa-pen"></i>
+              </button>
+              <button class="delete-btn">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
+          </div>
+          <!-- Repeat more cards -->
+        </div>
+      </section>
+      <section class="list-section watched">
+        <h2>Watched</h2>
+        <div class="list-container">
+          <div class="card">
+            <div class="content-row"></div>
+            <div class="controls">
+              <button class="edit-btn">
+                Edit <i class="fa-solid fa-pen"></i>
+              </button>
+              <button class="delete-btn">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="edit-modal hidden">
+        <div class="modal-content">
+          <h3>Change Category</h3>
+          <select id="category-select">
+            <option value="favourites">Favourites</option>
+            <option value="watchlater">Watch Later</option>
+            <option value="watched">Watched</option>
+          </select>
+          <div class="modal-buttons">
+            <button id="save-category">Save</button>
+            <button id="cancel-edit">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="logo">
+        <img src="../Assets/Logo.png" alt="Stream Vibe Logo" />
+        <h6>Stream Vibe</h6>
+      </div>
+      <div class="links">
+        <ul>
+          <li>Home</li>
+          <li>Contact us</li>
+          <li>Terms of services</li>
+          <li>About us</li>
+        </ul>
+        <ul>
+          <li>Live</li>
+          <li>FAQ</li>
+          <li>Premium</li>
+          <li>Privacy policy</li>
+        </ul>
+        <ul>
+          <li>You must watch</li>
+          <li>Recent release</li>
+          <li>Top IMDB</li>
+        </ul>
+      </div>
+    </footer>
+    <script src="../Js/watchlist.js"></script>
+  </body>
+</html>
