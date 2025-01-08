@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", async function () {
   try {
-    // Determine the correct path for fetching the modal
     const isIndexPage =
       window.location.pathname.endsWith("index.html") ||
       window.location.pathname === "/";
@@ -8,7 +7,6 @@ document.addEventListener("DOMContentLoaded", async function () {
       ? "./Pages/loginsignup.html"
       : "../Pages/loginsignup.html";
 
-    // Dynamically load the login/signup modal HTML
     const modalResponse = await fetch(modalPath);
 
     if (!modalResponse.ok) {
@@ -16,10 +14,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     const modalHtml = await modalResponse.text();
-    document.body.insertAdjacentHTML("beforeend", modalHtml); // Add modal to the body
-    console.log("Login/signup modal loaded successfully!");
+    document.body.insertAdjacentHTML("beforeend", modalHtml);
 
-    // DOM elements
     const userIcon = document.querySelector(".user-icon");
     const modalWrapper = document.querySelector(".modal-wrapper");
     const closeBtn = document.getElementById("close-btn");
@@ -27,58 +23,44 @@ document.addEventListener("DOMContentLoaded", async function () {
     const signupForm = document.getElementById("signup-form");
     const loginToggleBtn = document.getElementById("login-toggle-btn");
     const signupToggleBtn = document.getElementById("signup-toggle-btn");
-    const logoutBtn = document.getElementById("logout-btn"); // Logout button
+    const logoutBtn = document.getElementById("logout-btn");
 
-    if (!userIcon || !modalWrapper) {
-      throw new Error(
-        "Modal elements not found. Ensure login-signup-modal.html contains the correct structure."
-      );
-    }
+    const userId = localStorage.getItem("userId");
 
-    // Check if JWT token exists in localStorage
-    const token = localStorage.getItem("token");
-
-    if (token) {
-      // If the user is logged in, hide the user icon and show the logout button
+    if (userId) {
       logoutBtn.style.display = "block";
       userIcon.style.display = "none";
     } else {
-      // If not logged in, show the user icon and hide the logout button
       logoutBtn.style.display = "none";
       userIcon.style.display = "block";
     }
 
-    // Show the modal and default to the login form
     userIcon.addEventListener("click", function () {
       modalWrapper.classList.add("active");
-      loginForm.style.display = "block"; // Show login form
-      signupForm.style.display = "none"; // Hide signup form
+      loginForm.style.display = "block";
+      signupForm.style.display = "none";
     });
 
-    // Close the modal
     closeBtn.addEventListener("click", function () {
       modalWrapper.classList.remove("active");
     });
 
-    // Close modal on clicking outside the modal
     window.addEventListener("click", function (event) {
       if (event.target === modalWrapper) {
         modalWrapper.classList.remove("active");
       }
     });
 
-    // Toggle to login form
     loginToggleBtn.addEventListener("click", function (e) {
       e.preventDefault();
-      loginForm.style.display = "block"; // Show login form
-      signupForm.style.display = "none"; // Hide signup form
+      loginForm.style.display = "block";
+      signupForm.style.display = "none";
     });
 
-    // Toggle to signup form
     signupToggleBtn.addEventListener("click", function (e) {
       e.preventDefault();
-      signupForm.style.display = "block"; // Show signup form
-      loginForm.style.display = "none"; // Hide login form
+      signupForm.style.display = "block";
+      loginForm.style.display = "none";
     });
 
     // Handle Login Form Submission
@@ -91,19 +73,18 @@ document.addEventListener("DOMContentLoaded", async function () {
       try {
         const response = await fetch("http://localhost:4000/api/user/login", {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, password }),
         });
 
         const data = await response.json();
+
         if (response.ok) {
-          localStorage.setItem("token", data.token); // Store JWT in localStorage
+          localStorage.setItem("userId", data.userId); // Store userId instead of token
           alert("Login successful!");
-          modalWrapper.classList.remove("active"); // Close modal
-          logoutBtn.style.display = "block"; // Show logout button
-          userIcon.style.display = "none"; // Hide user icon
+          modalWrapper.classList.remove("active");
+          logoutBtn.style.display = "block";
+          userIcon.style.display = "none";
         } else {
           alert(data.message || "Login failed");
         }
@@ -122,19 +103,20 @@ document.addEventListener("DOMContentLoaded", async function () {
       const password = document.getElementById("signup-password").value;
 
       try {
-        const response = await fetch("http://localhost:4000/api/user", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ name, email, password }),
-        });
+        const response = await fetch(
+          "http://localhost:4000/api/user/register",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, email, password }),
+          }
+        );
 
         const data = await response.json();
+
         if (response.ok) {
-          console.log("Signup successful:", data);
           alert("Account created successfully!");
-          modalWrapper.classList.remove("active"); // Close modal
+          modalWrapper.classList.remove("active");
         } else {
           alert(data.message || "Signup failed");
         }
@@ -146,13 +128,13 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // Handle Logout Functionality
     logoutBtn.addEventListener("click", function () {
-      localStorage.removeItem("token"); // Clear JWT token
+      localStorage.removeItem("userId"); // Remove userId on logout
       alert("You have been logged out!");
-      logoutBtn.style.display = "none"; // Hide logout button
-      userIcon.style.display = "block"; // Show user icon
-      modalWrapper.classList.add("active"); // Reopen login modal
-      loginForm.style.display = "block"; // Show login form
-      signupForm.style.display = "none"; // Hide signup form
+      logoutBtn.style.display = "none";
+      userIcon.style.display = "block";
+      modalWrapper.classList.add("active");
+      loginForm.style.display = "block";
+      signupForm.style.display = "none";
     });
   } catch (error) {
     console.error("Error loading login/signup modal:", error);

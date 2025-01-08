@@ -845,10 +845,13 @@ header .header-background::after {
   color: #ff0000;
 }
 
-footer {
+body footer {
   background-image: url("../Assets/footer-bg.jpg");
 }
 
+header.scrolled {
+  background-color: #0f0f0f;
+}
 header #logout-btn {
   display: none;
   background-color: #ff0000;
@@ -894,6 +897,9 @@ header #logout-btn:hover {
   background-color: #ff0000;
   color: #fff;
 }
+.top-section .toggle-bar button.active {
+  background-color: #ff0000;
+}
 .top-section .toggle-bar #mv-btn {
   border-top-left-radius: 17px;
   border-bottom-left-radius: 17px;
@@ -903,9 +909,13 @@ header #logout-btn:hover {
   border-bottom-right-radius: 17px;
 }
 
-.list-section {
-  margin-bottom: 10pc;
+.content-container {
   margin-left: 7pc;
+}
+
+.list-section {
+  flex: 1 1 30%;
+  margin-top: 2pc;
 }
 .list-section h2 {
   font-size: 2rem;
@@ -915,55 +925,57 @@ header #logout-btn:hover {
 .list-section .list-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 6rem;
-  overflow: none;
+  gap: 77px;
+  margin-top: 1pc;
+  margin-bottom: 8pc;
 }
-.list-section .list-container .card {
-  flex: 0 0 auto;
-  width: 200px;
-  height: 350px;
+.list-section .card {
   background-color: #0f0f0f;
-  border: 1px solid #fff;
-  border-radius: 8px;
-  overflow: hidden;
-}
-.list-section .list-container .card img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.list-section .list-container .card .content-row {
-  display: none;
-}
-.list-section .list-container .card .controls {
+  width: 200px;
   display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-}
-.list-section .list-container .card .controls button {
-  color: #fff;
-  padding: 0.5rem 1.6rem;
-  border: none;
-  border-radius: 5px;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.2rem;
+}
+.list-section .card img {
+  border-radius: 30px;
+}
+.list-section .card img:hover {
+  opacity: 0.3;
+}
+.list-section .card .controls {
+  display: flex;
+  justify-content: space-between;
+}
+.list-section .card .controls button {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #ff0000;
+  border-radius: 10px;
+  padding: 10px 30px;
+  cursor: pointer;
+  font-size: 1.1rem;
   transition: 0.3s;
 }
-.list-section .list-container .card .controls .edit-btn {
-  background-color: #ff0000;
-}
-.list-section .list-container .card .controls .edit-btn:hover {
-  background-color: #660000;
-}
-.list-section .list-container .card .controls .delete-btn {
-  background-color: transparent;
-  border: 2px solid #ff0000;
-}
-.list-section .list-container .card .controls .delete-btn:hover {
+.list-section .card .controls button.edit-btn {
   background-color: #ff0000;
   color: #0f0f0f;
+  border: none;
+}
+.list-section .card .controls button.edit-btn:hover {
+  background-color: #cc0000;
+}
+.list-section .card .controls button.delete-btn {
+  background-color: transparent;
+}
+.list-section .card .controls button.delete-btn:hover {
+  background-color: #ff0000;
+  color: #0f0f0f;
+}
+
+.hidden {
+  display: none;
 }
 
 .edit-modal {

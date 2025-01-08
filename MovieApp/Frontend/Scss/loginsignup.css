@@ -57,6 +57,7 @@ header nav a.active {
 }
 header #icons {
   display: flex;
+  align-items: center;
   gap: 30px;
   font-size: 20px;
   cursor: pointer;
@@ -67,6 +68,18 @@ header #icons i {
 }
 header #icons i:hover {
   color: #ff0000;
+}
+header #icons #logout-btn {
+  display: none;
+  background-color: #ff0000;
+  border: none;
+  padding: 7px 7px;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+header #icons #logout-btn:hover {
+  background-color: #990000;
 }
 
 .hero-section {

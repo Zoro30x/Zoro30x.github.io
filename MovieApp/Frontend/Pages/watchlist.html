@@ -43,55 +43,71 @@
           --><button id="tv-btn">TV Series</button>
         </div>
       </section>
-      <section class="list-section favourites">
-        <h2>Favourites</h2>
-        <div class="list-container">
-          <div class="card">
-            <div class="content-row"></div>
-            <div class="controls">
-              <button class="edit-btn">
-                Edit <i class="fa-solid fa-pen"></i>
-              </button>
-              <button class="delete-btn">
-                <i class="fa-solid fa-trash"></i>
-              </button>
+      <div class="content-container">
+        <section id="movies-section" class="list-section">
+          <h2>Favourites</h2>
+          <div id="movies-favourites" class="list-container">
+            <div class="card">
+              <div class="content-roww"></div>
+              <div class="controls">
+                <button class="edit-btn">
+                  Edit <i class="fa-solid fa-pen"></i>
+                </button>
+                <button class="delete-btn">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section class="list-section watchlater">
-        <h2>Watch Later</h2>
-        <div class="list-container">
-          <div class="card">
-            <div class="content-row"></div>
-            <div class="controls">
-              <button class="edit-btn">
-                Edit <i class="fa-solid fa-pen"></i>
-              </button>
-              <button class="delete-btn">
-                <i class="fa-solid fa-trash"></i>
-              </button>
+
+          <h2>Watch Later</h2>
+          <div id="movies-watchlater" class="list-container">
+            <div class="card">
+              <div class="content-roww"></div>
+              <div class="controls">
+                <button class="edit-btn">
+                  Edit <i class="fa-solid fa-pen"></i>
+                </button>
+                <button class="delete-btn">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
             </div>
           </div>
-          <!-- Repeat more cards -->
-        </div>
-      </section>
-      <section class="list-section watched">
-        <h2>Watched</h2>
-        <div class="list-container">
-          <div class="card">
-            <div class="content-row"></div>
-            <div class="controls">
-              <button class="edit-btn">
-                Edit <i class="fa-solid fa-pen"></i>
-              </button>
-              <button class="delete-btn">
-                <i class="fa-solid fa-trash"></i>
-              </button>
+        </section>
+
+        <section id="tv-series-section" class="list-section hidden">
+          <h2>Favourites</h2>
+          <div id="tv-favourites" class="list-container">
+            <div class="card">
+              <div class="content-roww"></div>
+              <div class="controls">
+                <button class="edit-btn">
+                  Edit <i class="fa-solid fa-pen"></i>
+                </button>
+                <button class="delete-btn">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+
+          <h2>Watch Later</h2>
+          <div id="tv-watchlater" class="list-container">
+            <div class="card">
+              <div class="content-roww"></div>
+              <div class="controls">
+                <button class="edit-btn">
+                  Edit <i class="fa-solid fa-pen"></i>
+                </button>
+                <button class="delete-btn">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
       <div class="edit-modal hidden">
         <div class="modal-content">
           <h3>Change Category</h3>
@@ -134,5 +150,6 @@
     </footer>
     <script src="../Js/watchlist.js"></script>
     <script src="../Js/loginsignup.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
   </body>
 </html>

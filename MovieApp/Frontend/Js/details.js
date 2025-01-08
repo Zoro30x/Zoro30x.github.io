@@ -5,7 +5,7 @@ const backdropBaseURL = "https://image.tmdb.org/t/p/original";
 
 // Extract type and id from URL query parameters
 const urlParams = new URLSearchParams(window.location.search);
-const type = urlParams.get("type");
+const type = urlParams.get("type"); // either 'movie' or 'tv'
 const id = urlParams.get("id");
 
 // DOM Elements
@@ -20,13 +20,19 @@ const trailerElement = document.getElementById("trailer");
 const watchLaterButton = document.getElementById("add-watch-later");
 const favoritesButton = document.getElementById("add-favorites");
 
-// Fetch Movie/TV Show Details
+// Function to fetch Movie/TV Show Details
 async function fetchDetails() {
   try {
     const response = await fetch(
       `${BASE_URL}/${type}/${id}?api_key=${API_KEY}&language=en-US&append_to_response=credits,videos`
     );
     const data = await response.json();
+
+    // Check if data is returned correctly
+    if (!data || (!data.title && !data.name)) {
+      alert("Movie/TV series details not found!");
+      return;
+    }
 
     // Update page elements
     titleElement.textContent = data.title || data.name;
@@ -70,10 +76,76 @@ async function fetchDetails() {
     }
   } catch (error) {
     console.error("Error fetching details:", error);
+    alert("An error occurred while fetching movie details.");
   }
 }
 
+// Fetch details on page load
 fetchDetails();
+
+// Function to handle adding to Watch Later or Favorites
+// Function to handle adding to Watch Later or Favorites
+async function handleAddToList(category) {
+  const userId = localStorage.getItem("userId"); // Retrieve userId from localStorage
+
+  if (!userId) {
+    alert("Please log in to use this feature!");
+    return;
+  }
+
+  // Movie/TV series details to add
+  const movie = {
+    id, // Using the actual TMDB ID
+    title: titleElement.textContent || "Unknown Title",
+    posterPath: posterElement.src || "",
+  };
+
+  // Determine if it's a movie or TV show and the appropriate category
+  const categoryType =
+    category === "watchlater"
+      ? type === "movie"
+        ? "moviesWatchlater"
+        : "tvWatchlater"
+      : category === "favorites"
+      ? type === "movie"
+        ? "moviesFavourites"
+        : "tvFavourites"
+      : "";
+
+  if (!categoryType) {
+    alert("Invalid category.");
+    return;
+  }
+
+  try {
+    const response = await fetch(
+      `http://localhost:4000/api/user/watchlist/add`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "user-id": userId, // Pass userId in the headers
+        },
+        body: JSON.stringify({ userId, category: categoryType, movie }),
+      }
+    );
+
+    const data = await response.json();
+    if (response.ok) {
+      alert(`${movie.title} added to ${categoryType}!`);
+    } else {
+      alert(data.message || `Failed to add to ${categoryType}`);
+    }
+  } catch (error) {
+    console.error(`Error adding to ${categoryType}:`, error);
+    alert("An error occurred. Please try again.");
+  }
+}
+
+watchLaterButton.addEventListener("click", () => handleAddToList("watchlater"));
+favoritesButton.addEventListener("click", () => handleAddToList("favorites"));
+
+// Similar content logic remains the same
 async function fetchSimilarContent() {
   try {
     const response = await fetch(
@@ -117,7 +189,6 @@ function updateSimilarContentRow(items) {
 }
 
 // Initialize page load
-
 fetchSimilarContent();
 
 // Scroll effect for header
