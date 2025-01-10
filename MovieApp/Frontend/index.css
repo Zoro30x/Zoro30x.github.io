@@ -269,7 +269,7 @@ header #icons #logout-btn:hover {
 }
 
 footer {
-  background-image: url("../Assets/footer-bg.jpg");
+  background-image: url("./Assets/footer-bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
