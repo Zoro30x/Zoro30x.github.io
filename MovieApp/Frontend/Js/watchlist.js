@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       const response = await fetch(
-        `http://localhost:4000/api/user/watchlist?type=${type}`,
+        `https://zekos-movie-website.onrender.com/api/user/watchlist?type=${type}`,
         {
           method: "GET",
           headers: {
@@ -215,7 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
         const userId = localStorage.getItem("userId");
         const response = await fetch(
-          `http://localhost:4000/api/user/watchlist/move`,
+          `https://zekos-movie-website.onrender.com/api/user/watchlist/move`,
           {
             method: "PUT",
             headers: {
@@ -259,7 +259,7 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
         const userId = localStorage.getItem("userId");
         const response = await fetch(
-          `http://localhost:4000/api/user/watchlist/${category}/${item.id}`,
+          `https://zekos-movie-website.onrender.com/api/user/watchlist/${category}/${item.id}`,
           {
             method: "DELETE",
             headers: {

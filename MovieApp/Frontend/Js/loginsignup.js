@@ -71,11 +71,14 @@ document.addEventListener("DOMContentLoaded", async function () {
       const password = document.getElementById("login-password").value;
 
       try {
-        const response = await fetch("http://localhost:4000/api/user/login", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, password }),
-        });
+        const response = await fetch(
+          "https://zekos-movie-website.onrender.com/api/user/login",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email, password }),
+          }
+        );
 
         const data = await response.json();
 
@@ -104,7 +107,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       try {
         const response = await fetch(
-          "http://localhost:4000/api/user/register",
+          "https://zekos-movie-website.onrender.com/api/user/register",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },

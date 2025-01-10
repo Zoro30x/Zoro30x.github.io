@@ -119,7 +119,7 @@ async function handleAddToList(category) {
 
   try {
     const response = await fetch(
-      `http://localhost:4000/api/user/watchlist/add`,
+      `https://zekos-movie-website.onrender.com/api/user/watchlist/add`,
       {
         method: "POST",
         headers: {
