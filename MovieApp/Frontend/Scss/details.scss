@@ -166,9 +166,10 @@ header {
 }
 
 .trailer {
+  padding-left: 5.5rem;
+  padding-right: 5.5rem;
   h2 {
     font-size: 2rem;
-    padding-left: 6rem;
     padding-bottom: 2rem;
   }
 
@@ -176,14 +177,14 @@ header {
     display: block;
     width: 100%;
     max-width: 1300px;
-    height: 700px;
-    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    height: auto;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
   }
 }
 
 .similar {
-  padding: 3rem 0rem 3rem 5.5rem;
+  padding: 3rem 5.5rem 3rem 5.5rem;
 
   .content-text h2 {
     font-size: 2rem;
@@ -194,13 +195,12 @@ header {
     display: flex;
     gap: 15px;
     overflow: hidden;
-    width: 1300px;
+    width: 100%; // Adjust to the available space
+    max-width: 1300px;
 
     .card {
-      position: relative;
       flex: 0 0 auto;
-      overflow: hidden;
-      width: 180px;
+      max-width: 180px;
 
       img {
         width: 100%;
@@ -249,4 +249,90 @@ header {
 
 body footer {
   background-image: url("../Assets/footer-bg.jpg");
+}
+
+@media (max-width: 1400px) {
+  .details-container {
+    .details-content {
+      max-width: 55%;
+      .description {
+        max-width: 80%;
+      }
+    }
+  }
+}
+
+@media (min-width: $tablet) and (max-width: $desktop) {
+  .details-container {
+    flex-direction: column;
+    .details-content {
+      padding-top: 50px;
+      padding-left: 8pc;
+      max-width: 74%;
+      .description {
+        max-width: 92%;
+      }
+    }
+  }
+
+  .trailer {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+  }
+
+  .similar {
+    padding: 3rem 4.5rem 3rem 4.5rem;
+  }
+}
+
+@media (min-width: $large-mobile) and (max-width: $tablet) {
+  .details-container {
+    .poster {
+      display: none;
+    }
+    .details-content {
+      padding-top: 0px;
+      padding-left: 120px;
+      padding-right: 30px;
+      max-width: 100%;
+      .description {
+        max-width: 80%;
+      }
+    }
+  }
+
+  .trailer {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+  }
+
+  .similar {
+    padding: 3rem 4.5rem 3rem 4.5rem;
+  }
+}
+
+@media (min-width: $small-mobile) and (max-width: $large-mobile) {
+  .details-container {
+    .poster {
+      display: none;
+    }
+    .details-content {
+      padding-top: 0px;
+      padding-left: 30px;
+      padding-right: 30px;
+      max-width: 100%;
+      .description {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .trailer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .similar {
+    padding: 3rem 2rem 3rem 2rem;
+  }
 }

@@ -77,7 +77,6 @@ header {
 }
 
 .list-section {
-  flex: 1 1 30%;
   margin-top: 2pc;
 
   h2 {
@@ -221,4 +220,123 @@ header {
 
 body footer {
   background-image: url("../Assets/footer-bg.jpg");
+}
+
+@media (min-width: $tablet) and (max-width: $desktop) {
+  .top-section {
+    margin-left: 4pc;
+    margin-top: 10pc;
+    margin-bottom: 6pc;
+    .watchlist-heading {
+      text-align: center;
+      padding-bottom: 30px;
+    }
+  }
+
+  .content-container {
+    margin-left: 1pc;
+    margin-right: 1pc;
+  }
+
+  .list-section {
+    .list-container {
+      justify-content: center;
+      gap: 50px;
+      margin-top: 1pc;
+      margin-bottom: 8pc;
+    }
+  }
+
+  .list-section h2 {
+    text-align: center;
+    padding-left: 4pc;
+    padding-bottom: 30px;
+  }
+}
+
+@media (min-width: $large-mobile) and (max-width: $tablet) {
+  .top-section {
+    margin-left: 4pc;
+    margin-top: 10pc;
+    margin-bottom: 6pc;
+    .watchlist-heading {
+      text-align: center;
+      padding-bottom: 30px;
+    }
+  }
+
+  .content-container {
+    margin-left: 1pc;
+    margin-right: 1pc;
+  }
+
+  .list-section {
+    .list-container {
+      justify-content: center;
+      gap: 50px;
+      margin-top: 1pc;
+      margin-bottom: 8pc;
+      padding-left: 50px;
+    }
+
+    .card {
+      width: 300px;
+      .controls {
+        button {
+          padding: 15px 55px;
+        }
+      }
+    }
+  }
+
+  .list-section h2 {
+    text-align: center;
+    padding-left: 4pc;
+    padding-bottom: 30px;
+  }
+}
+
+@media (min-width: $small-mobile) and (max-width: $large-mobile) {
+  .top-section {
+    margin-left: 4pc;
+    margin-top: 10pc;
+    margin-bottom: 6pc;
+    .watchlist-heading {
+      text-align: center;
+      padding-bottom: 30px;
+    }
+  }
+
+  .content-container {
+    margin-left: 1pc;
+    margin-right: 1pc;
+  }
+
+  .list-section {
+    padding-left: 70px;
+    padding-right: 40px;
+    .list-container {
+      justify-content: center;
+      gap: 10pc;
+      margin-top: 1pc;
+      margin-bottom: 8pc;
+      padding-left: 30px;
+    }
+
+    .card {
+      width: 350px;
+      gap: 20px;
+      .controls {
+        button {
+          padding: 15px 65px;
+        }
+      }
+    }
+  }
+
+  .list-section h2 {
+    text-align: center;
+    padding-left: 1pc;
+    padding-bottom: 30px;
+  }
 }

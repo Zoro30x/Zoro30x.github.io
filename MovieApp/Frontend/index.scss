@@ -10,8 +10,9 @@ $spacing-mobile: 20px;
 $spacing-tablet: 35px;
 $spacing-desktop: 50px;
 
-$mobile: 360px;
-$tablet: 720px;
+$small-mobile: 360px;
+$large-mobile: 640px;
+$tablet: 880px;
 $desktop: 1024px;
 
 @mixin overlay {
@@ -119,7 +120,6 @@ header {
   align-items: center;
   background-size: cover;
   background-position: center;
-  text-align: justify;
   gap: 7pc;
 
   &::before {
@@ -152,6 +152,7 @@ header {
       font-size: 3rem;
       font-weight: 700;
       margin-bottom: 20px;
+      text-align: left;
     }
 
     p {
@@ -407,6 +408,137 @@ footer {
       &:hover {
         color: red;
       }
+    }
+  }
+}
+
+@media (min-width: $tablet) and (max-width: $desktop) {
+  header {
+    padding: 20px 60px;
+  }
+
+  .hero-section {
+    .hero-text {
+      max-width: 45%;
+      padding-left: 70px;
+    }
+  }
+
+  #content-section {
+    margin: 40px 70px 40px 70px;
+
+    .content-container {
+      padding-bottom: 50px;
+    }
+  }
+
+  footer {
+    .links {
+      gap: 100px;
+    }
+  }
+}
+
+@media (min-width: $large-mobile) and (max-width: $tablet) {
+  header {
+    padding: 20px 20px;
+    nav {
+      gap: 20px;
+    }
+
+    #icons {
+      gap: 20px;
+    }
+  }
+
+  .hero-section {
+    .hero-text {
+      max-width: 94%;
+      padding-left: 40px;
+    }
+
+    .hero-navigation .prev {
+      margin-left: 10px;
+    }
+
+    .hero-navigation .next {
+      margin-right: 10px;
+    }
+
+    .hero-image {
+      display: none;
+    }
+  }
+
+  #content-section {
+    margin: 40px;
+
+    .content-container {
+      padding-bottom: 40px;
+    }
+  }
+
+  footer {
+    .links {
+      gap: 70px;
+    }
+  }
+}
+
+@media (min-width: $small-mobile) and (max-width: $large-mobile) {
+  header {
+    padding: 20px 20px;
+
+    nav {
+      gap: 2em;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: $body-bg;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 0;
+      a {
+        font-size: 1.5rem;
+      }
+    }
+
+    #icons {
+      gap: 20px;
+    }
+  }
+
+  .hero-section {
+    .hero-text {
+      max-width: 93%;
+      padding-left: 40px;
+    }
+
+    .hero-navigation .prev {
+      margin-left: 10px;
+    }
+
+    .hero-navigation .next {
+      margin-right: 10px;
+    }
+
+    .hero-image {
+      display: none;
+    }
+  }
+
+  #content-section {
+    margin: 40px 20px 40px 20px;
+
+    .content-container {
+      padding-bottom: 30px;
+    }
+  }
+
+  footer {
+    .links {
+      gap: 20px;
     }
   }
 }

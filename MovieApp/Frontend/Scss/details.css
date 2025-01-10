@@ -89,7 +89,6 @@ header #icons #logout-btn:hover {
   align-items: center;
   background-size: cover;
   background-position: center;
-  text-align: justify;
   gap: 7pc;
 }
 .hero-section::before {
@@ -120,6 +119,7 @@ header #icons #logout-btn:hover {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 20px;
+  text-align: left;
 }
 .hero-section .hero-text p {
   font-size: 1.2rem;
@@ -343,6 +343,101 @@ footer .links ul li:hover {
   color: red;
 }
 
+@media (min-width: 880px) and (max-width: 1024px) {
+  header {
+    padding: 20px 60px;
+  }
+  .hero-section .hero-text {
+    max-width: 45%;
+    padding-left: 70px;
+  }
+  #content-section {
+    margin: 40px 70px 40px 70px;
+  }
+  #content-section .content-container {
+    padding-bottom: 50px;
+  }
+  footer .links {
+    gap: 100px;
+  }
+}
+@media (min-width: 640px) and (max-width: 880px) {
+  header {
+    padding: 20px 20px;
+  }
+  header nav {
+    gap: 20px;
+  }
+  header #icons {
+    gap: 20px;
+  }
+  .hero-section .hero-text {
+    max-width: 94%;
+    padding-left: 40px;
+  }
+  .hero-section .hero-navigation .prev {
+    margin-left: 10px;
+  }
+  .hero-section .hero-navigation .next {
+    margin-right: 10px;
+  }
+  .hero-section .hero-image {
+    display: none;
+  }
+  #content-section {
+    margin: 40px;
+  }
+  #content-section .content-container {
+    padding-bottom: 40px;
+  }
+  footer .links {
+    gap: 70px;
+  }
+}
+@media (min-width: 360px) and (max-width: 640px) {
+  header {
+    padding: 20px 20px;
+  }
+  header nav {
+    gap: 2em;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0f0f0f;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+  }
+  header nav a {
+    font-size: 1.5rem;
+  }
+  header #icons {
+    gap: 20px;
+  }
+  .hero-section .hero-text {
+    max-width: 93%;
+    padding-left: 40px;
+  }
+  .hero-section .hero-navigation .prev {
+    margin-left: 10px;
+  }
+  .hero-section .hero-navigation .next {
+    margin-right: 10px;
+  }
+  .hero-section .hero-image {
+    display: none;
+  }
+  #content-section {
+    margin: 40px 20px 40px 20px;
+  }
+  #content-section .content-container {
+    padding-bottom: 30px;
+  }
+  footer .links {
+    gap: 20px;
+  }
+}
 * {
   box-sizing: border-box;
 }
@@ -487,22 +582,25 @@ header #logout-btn:hover {
   font-size: 1rem;
 }
 
+.trailer {
+  padding-left: 5.5rem;
+  padding-right: 5.5rem;
+}
 .trailer h2 {
   font-size: 2rem;
-  padding-left: 6rem;
   padding-bottom: 2rem;
 }
 .trailer iframe {
   display: block;
   width: 100%;
   max-width: 1300px;
-  height: 700px;
-  margin: 0 auto;
+  aspect-ratio: 16/9;
+  height: auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
 }
 
 .similar {
-  padding: 3rem 0rem 3rem 5.5rem;
+  padding: 3rem 5.5rem 3rem 5.5rem;
 }
 .similar .content-text h2 {
   font-size: 2rem;
@@ -512,13 +610,12 @@ header #logout-btn:hover {
   display: flex;
   gap: 15px;
   overflow: hidden;
-  width: 1300px;
+  width: 100%;
+  max-width: 1300px;
 }
 .similar .content-row .card {
-  position: relative;
   flex: 0 0 auto;
-  overflow: hidden;
-  width: 180px;
+  max-width: 180px;
 }
 .similar .content-row .card img {
   width: 100%;
@@ -559,4 +656,75 @@ header #logout-btn:hover {
 
 body footer {
   background-image: url("../Assets/footer-bg.jpg");
+}
+
+@media (max-width: 1400px) {
+  .details-container .details-content {
+    max-width: 55%;
+  }
+  .details-container .details-content .description {
+    max-width: 80%;
+  }
+}
+@media (min-width: 880px) and (max-width: 1024px) {
+  .details-container {
+    flex-direction: column;
+  }
+  .details-container .details-content {
+    padding-top: 50px;
+    padding-left: 8pc;
+    max-width: 74%;
+  }
+  .details-container .details-content .description {
+    max-width: 92%;
+  }
+  .trailer {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+  }
+  .similar {
+    padding: 3rem 4.5rem 3rem 4.5rem;
+  }
+}
+@media (min-width: 640px) and (max-width: 880px) {
+  .details-container .poster {
+    display: none;
+  }
+  .details-container .details-content {
+    padding-top: 0px;
+    padding-left: 120px;
+    padding-right: 30px;
+    max-width: 100%;
+  }
+  .details-container .details-content .description {
+    max-width: 80%;
+  }
+  .trailer {
+    padding-left: 4.5rem;
+    padding-right: 4.5rem;
+  }
+  .similar {
+    padding: 3rem 4.5rem 3rem 4.5rem;
+  }
+}
+@media (min-width: 360px) and (max-width: 640px) {
+  .details-container .poster {
+    display: none;
+  }
+  .details-container .details-content {
+    padding-top: 0px;
+    padding-left: 30px;
+    padding-right: 30px;
+    max-width: 100%;
+  }
+  .details-container .details-content .description {
+    max-width: 100%;
+  }
+  .trailer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .similar {
+    padding: 3rem 2rem 3rem 2rem;
+  }
 }/*# sourceMappingURL=details.css.map */

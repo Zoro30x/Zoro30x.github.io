@@ -89,7 +89,6 @@ header #icons #logout-btn:hover {
   align-items: center;
   background-size: cover;
   background-position: center;
-  text-align: justify;
   gap: 7pc;
 }
 .hero-section::before {
@@ -120,6 +119,7 @@ header #icons #logout-btn:hover {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 20px;
+  text-align: left;
 }
 .hero-section .hero-text p {
   font-size: 1.2rem;
@@ -343,6 +343,101 @@ footer .links ul li:hover {
   color: red;
 }
 
+@media (min-width: 880px) and (max-width: 1024px) {
+  header {
+    padding: 20px 60px;
+  }
+  .hero-section .hero-text {
+    max-width: 45%;
+    padding-left: 70px;
+  }
+  #content-section {
+    margin: 40px 70px 40px 70px;
+  }
+  #content-section .content-container {
+    padding-bottom: 50px;
+  }
+  footer .links {
+    gap: 100px;
+  }
+}
+@media (min-width: 640px) and (max-width: 880px) {
+  header {
+    padding: 20px 20px;
+  }
+  header nav {
+    gap: 20px;
+  }
+  header #icons {
+    gap: 20px;
+  }
+  .hero-section .hero-text {
+    max-width: 94%;
+    padding-left: 40px;
+  }
+  .hero-section .hero-navigation .prev {
+    margin-left: 10px;
+  }
+  .hero-section .hero-navigation .next {
+    margin-right: 10px;
+  }
+  .hero-section .hero-image {
+    display: none;
+  }
+  #content-section {
+    margin: 40px;
+  }
+  #content-section .content-container {
+    padding-bottom: 40px;
+  }
+  footer .links {
+    gap: 70px;
+  }
+}
+@media (min-width: 360px) and (max-width: 640px) {
+  header {
+    padding: 20px 20px;
+  }
+  header nav {
+    gap: 2em;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0f0f0f;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+  }
+  header nav a {
+    font-size: 1.5rem;
+  }
+  header #icons {
+    gap: 20px;
+  }
+  .hero-section .hero-text {
+    max-width: 93%;
+    padding-left: 40px;
+  }
+  .hero-section .hero-navigation .prev {
+    margin-left: 10px;
+  }
+  .hero-section .hero-navigation .next {
+    margin-right: 10px;
+  }
+  .hero-section .hero-image {
+    display: none;
+  }
+  #content-section {
+    margin: 40px 20px 40px 20px;
+  }
+  #content-section .content-container {
+    padding-bottom: 30px;
+  }
+  footer .links {
+    gap: 20px;
+  }
+}
 header {
   transition: height 0.3s ease, background-color 0.3s ease;
 }
@@ -503,4 +598,47 @@ header .header-background::after {
 
 body footer {
   background-image: url("../Assets/footer-bg.jpg");
+}
+
+@media (min-width: 880px) and (max-width: 1024px) {
+  .search {
+    padding-left: 70px;
+  }
+  .search input {
+    width: 400px;
+  }
+  .content-row {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+}
+@media (min-width: 640px) and (max-width: 880px) {
+  .search {
+    padding-left: 40px;
+  }
+  .search input {
+    width: 400px;
+  }
+  .content-row {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media (min-width: 360px) and (max-width: 640px) {
+  .search {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .search input {
+    width: 480px;
+  }
+  .content-row {
+    grid-template-columns: repeat(3, 1fr);
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }/*# sourceMappingURL=moviestv.css.map */
