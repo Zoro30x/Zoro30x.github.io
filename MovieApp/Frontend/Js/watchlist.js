@@ -61,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
       tvWatchlater: "tvWatchlater",
     };
 
-    // Log category to debug potential mismatches
     console.log("Fetching data for category:", category);
 
     const type = typeMap[category];
@@ -123,7 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Function to create a card for each item
   // Function to create a card for each item
   function createCard(item, category) {
     const card = document.createElement("div");

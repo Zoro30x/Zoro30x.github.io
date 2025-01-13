@@ -5,12 +5,12 @@ const router = express.Router();
 
 // Middleware to get the userId from headers (for authenticated routes only)
 const authenticateUser = (req, res, next) => {
-  const userId = req.headers["user-id"]; // Get userId from headers
+  const userId = req.headers["user-id"];
   if (!userId) {
     return res.status(401).json({ message: "User not logged in" });
   }
-  req.userId = userId; // Assign userId to request object
-  next(); // Continue to next route handler
+  req.userId = userId;
+  next();
 };
 
 // Register a new user (No authentication required)

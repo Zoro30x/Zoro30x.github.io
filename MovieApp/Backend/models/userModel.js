@@ -15,27 +15,27 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
   moviesFavourites: {
-    type: Array, // Changed from Object to Array
+    type: Array,
     default: [],
   },
   moviesWatchlater: {
-    type: Array, // Changed from Object to Array
+    type: Array,
     default: [],
   },
   moviesWatched: {
-    type: Array, // Changed from Object to Array
+    type: Array,
     default: [],
   },
   tvFavourites: {
-    type: Array, // Changed from Object to Array
+    type: Array,
     default: [],
   },
   tvWatchlater: {
-    type: Array, // Changed from Object to Array
+    type: Array,
     default: [],
   },
   tvWatched: {
-    type: Array, // Changed from Object to Array
+    type: Array,
     default: [],
   },
 });

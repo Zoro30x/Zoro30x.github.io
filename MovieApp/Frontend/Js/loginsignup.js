@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         const data = await response.json();
 
         if (response.ok) {
-          localStorage.setItem("userId", data.userId); // Store userId instead of token
+          localStorage.setItem("userId", data.userId); // Store userId
           alert("Login successful!");
           modalWrapper.classList.remove("active");
           logoutBtn.style.display = "block";

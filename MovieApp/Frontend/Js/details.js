@@ -39,7 +39,6 @@ async function fetchDetails() {
     descriptionElement.textContent = data.overview;
     posterElement.src = `${posterBaseURL}${data.poster_path}`;
 
-    // Fix the background image
     document.querySelector(
       ".details-container"
     ).style.backgroundImage = `url(${backdropBaseURL}${data.backdrop_path})`;
@@ -84,7 +83,6 @@ async function fetchDetails() {
 fetchDetails();
 
 // Function to handle adding to Watch Later or Favorites
-// Function to handle adding to Watch Later or Favorites
 async function handleAddToList(category) {
   const userId = localStorage.getItem("userId"); // Retrieve userId from localStorage
 
@@ -95,7 +93,7 @@ async function handleAddToList(category) {
 
   // Movie/TV series details to add
   const movie = {
-    id, // Using the actual TMDB ID
+    id,
     title: titleElement.textContent || "Unknown Title",
     posterPath: posterElement.src || "",
   };
@@ -145,7 +143,6 @@ async function handleAddToList(category) {
 watchLaterButton.addEventListener("click", () => handleAddToList("watchlater"));
 favoritesButton.addEventListener("click", () => handleAddToList("favorites"));
 
-// Similar content logic remains the same
 async function fetchSimilarContent() {
   try {
     const response = await fetch(
@@ -211,9 +208,9 @@ document.querySelectorAll(".content-row").forEach((row) => {
   row.addEventListener("mousedown", (e) => {
     isDragging = true;
     row.classList.add("dragging");
-    startX = e.pageX - row.offsetLeft; // Capture the initial X position
-    scrollLeft = row.scrollLeft; // Record the scroll position
-    e.preventDefault(); // Prevent default behavior (e.g., text selection)
+    startX = e.pageX - row.offsetLeft;
+    scrollLeft = row.scrollLeft;
+    e.preventDefault();
   });
 
   // Mouse leave event to stop dragging
@@ -233,8 +230,8 @@ document.querySelectorAll(".content-row").forEach((row) => {
     if (!isDragging) return; // Only drag if the mouse is down
     e.preventDefault(); // Prevent default behavior
 
-    const x = e.pageX - row.offsetLeft; // Current X position
-    const walk = (x - startX) * 1.5; // Adjust the multiplier for speed
-    row.scrollLeft = scrollLeft - walk; // Update the scroll position
+    const x = e.pageX - row.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    row.scrollLeft = scrollLeft - walk;
   });
 });
