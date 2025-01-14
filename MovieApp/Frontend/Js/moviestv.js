@@ -68,10 +68,30 @@ document.getElementById("load-more").addEventListener("click", () => {
 // Initial fetch when the page loads
 fetchContent(currentPage);
 
-// Event Listener for Search
+// Function to search movies or TV series based on the search input
+async function searchMovies(query) {
+  if (!query) return;
+
+  const endpoint = isMoviesPage ? "/search/movie" : "/search/tv";
+  try {
+    const response = await fetch(
+      `${BASE_URL}${endpoint}?api_key=${API_KEY}&query=${query}&language=en-US`
+    );
+    const data = await response.json();
+    const searchResults = data.results;
+
+    const contentGrid = document.querySelector(".content-row");
+    contentGrid.innerHTML = "";
+
+    displayContent(searchResults);
+  } catch (error) {
+    console.error("Error searching content:", error);
+  }
+}
+// Add event listener to search button
 document.getElementById("search-btn").addEventListener("click", () => {
-  const searchInput = document.getElementById("search-input").value.trim();
-  searchMovies(searchInput); // Perform search
+  const query = document.getElementById("search-input").value;
+  searchMovies(query);
 });
 
 // Initial fetch when the page loads
